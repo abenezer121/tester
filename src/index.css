@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+
+
+
+@font-face {
+  font-family: "Rubik";
+  src: url("./assets/fonts/rubik/Rubik-Light.ttf");
+}
+@tailwind utilities;
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-width: 450px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bg {
+  background: white url("./assets/icons/bg.png") repeat;
+  background-position: 40% 100%;
+  background-size: 1300px;
+}
+.bg-bg {
+  background: url("./assets/icons/bg-polygon.png") no-repeat;
+  background-size: 100vw 150vh;
+  background-position: top 0 right;
+  /* background-attachment: local; */
+}
+
+
+@layer base {
+
+  form.sty1 input[type='button'],
+  form.sty1 input[type='submit'] {
+    @apply bg-[#6C6AD76E] border-transparent !important;
+  }
+
+  .active_btn {
+    @apply bg-opacity-40 bg-black/20 rounded-md p-4 py-1;
+  }
+
+  .active_link {
+    @apply !text-orange-400;
+  }
+
+  .child-text-white * {
+    @apply text-white;
+  }
+
+  button,
+  .btn,
+  input[type='button'],
+  input[type='submit'] {
+    @apply bg-black p-1 px-3 text-white uppercase text-sm text-center border cursor-pointer border-black hover:shadow-lg hover:shadow-black transition-all;
+  }
+
+
+  .btn-sty1 {
+    @apply bg-white text-black rounded-full p-1 px-4 inline-block !font-bold !text-[13px] !self-center;
+  }
+  .btn-sty2 {
+    @apply bg-[#6C6AD7] rounded-sm p-1 px-3 uppercase text-white text-center self-center font-bold;
+  }
+
+  h1 {
+    @apply !text-4xl !font-black;
+  }
+  h2 {
+    @apply !text-2xl !font-black;
+  }
+  h3 {
+    @apply !text-lg !font-black;
+  }
+
+  .color_inherit * {
+    @apply !text-inherit;
+  }
+  .textwhite h1,
+  .textwhite h2,
+  .textwhite h4,
+  .textwhite h3 {
+    @apply text-white !important;
+  }
+
+  p {
+    @apply text-gray-500 py-2;
+  }
+
+
+  .sw {
+    width: 83%;
+  }
+
+  .theme-light {
+    @apply bg-white text-black !important;
+  }
+  
+  .text-shadow {
+    text-shadow: 1px 0 3px black;
+  }
+
+  input,
+  textarea {
+    @apply border px-2 py-1 border-grey bg-slate-300;
+  }
+
+  textarea {
+    @apply h-40;
+  }
+
+  
+  .uparrow {
+    border: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 15px solid white;
+  }
+  
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+  } 
+
+
+
+
+}
+
+
+@layer components {
+
+
+
+.card {
+  @apply bg-white text-dark p-3 shadow-md;
+}
+
+.card2 {
+  @apply border border-[#a3a3a3] p-8 rounded-md min-w-[200px];
+}
+
+.card3 {
+  @apply border border-[#6C6AD7] rounded-lg ;
+}
+
+.icon {
+  @apply rounded-full bg-blue-400 p-2 flex justify-center items-center w-7 h-7 inline-block;
+}
+
+
+
+}
