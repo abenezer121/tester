@@ -167,7 +167,7 @@ function Mapviewer(){
 
   useEffect(()=> {
 
-    console.log("the state is sdaf " , latlng)
+    console.log("the state is sdafasfsdfasdf " , latlng)
   } , [latlng])
 
   return (
@@ -185,14 +185,12 @@ function Mapviewer(){
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
 
-          {latlng.latitude != null && latlng.longitude != null ? (
-            <Marker
-              icon={RedIcon}
-              position={[default_latitude , default_longitude]}
-            />
-          ) : (
-            ""
-          )}
+       
+       
+
+
+          <CustomMarker isActive={true} data={{ position: [default_latitude , default_longitude] }} />
+       
         </MapContainer>
       </div>
     </div>
@@ -200,6 +198,31 @@ function Mapviewer(){
 
   )
 }
+
+
+const CustomMarker = ({ isActive, data, map }) => {
+  const [refReady, setRefReady] = useState(false);
+  let popupRef = useRef();
+
+  useEffect(() => {
+    if (refReady && isActive) {
+      popupRef.openOn(map);
+    }
+  }, [isActive, refReady, map]);
+
+  return (
+    <Marker position={data.position}>
+      <Popup
+        ref={(r) => {
+          popupRef = r;
+          setRefReady(true);
+        }}
+      >
+        Yupperz
+      </Popup>
+    </Marker>
+  );
+};
 
 export default OneTimeSms;
 
